@@ -1,0 +1,56 @@
+<head>
+  <title>nhs-with-line</title>
+  <link rel="icon" href="https://obs.line-scdn.net/0hg86Y61P_OBcLIBISEX1HQDdlNnp8Dj5fcxJ0Iy10ZyR1Ry9AN0FwcSxzNS4vEy1HP08kJHkoZiFz/preview">
+  <link rel="apple-touch-icon" href="https://obs.line-scdn.net/0hg86Y61P_OBcLIBISEX1HQDdlNnp8Dj5fcxJ0Iy10ZyR1Ry9AN0FwcSxzNS4vEy1HP08kJHkoZiFz/preview">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+</head>
+<body class="lime lighten-5">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <span><i class="material-icons">warning</i>This page is liff application.</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <span>Let's record the relationship of your LINE and applicable organization account.</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <a class="waves-effect waves-light btn" id="do">DO!<i class="material-icons large">call_merge</i></a>
+      </div>
+      <div class="col">
+        <a class="waves-effect waves-light btn hide" id="check">CHECK!<i class="material-icons large">message</i></a>
+      </div>
+    </div>
+  </div>
+  <input id="gConnectWithL" type="hidden" value="<%= gConnectWithL %>">
+  <script>
+    liff.init(function (data) {
+      $(document).on('click', '#do', function () {
+        liff.sendMessages([{
+          type: 'text',
+          text: '!link ' + $('#gConnectWithL').val()
+        }]).then(function () {
+          $('#check').removeClass('hide');
+          Materialize.toast('please push check button.', 10000);
+        });
+      });
+
+      $(document).on('click', '#check', function () {
+        liff.sendMessages([{
+          type: 'text',
+          text: '!check'
+        }]).then(function () {
+          Materialize.toast('please check bot reply.', 10000);
+        });
+      });
+    });
+  </script>
+</body>

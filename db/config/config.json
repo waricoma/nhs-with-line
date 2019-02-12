@@ -1,0 +1,20 @@
+{
+  "development": {
+    "username": null,
+    "password": null,
+    "dialect": "sqlite",
+    "storage": "./main.sqlite3"
+  },
+  "test": {
+    "username": null,
+    "password": null,
+    "dialect": "sqlite",
+    "storage": ":memory"
+  },
+  "production": {
+    "username": null,
+    "password": null,
+    "dialect": "sqlite",
+    "storage": "./main.sqlite3"
+  }
+}
