@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" href="https://nhs-with-line.netlify.com/facebook_profile_image.png">
   <meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@waritocomatta">
-  <meta name="twitter:creator" content="@Swaritocomatta">
+  <meta name="twitter:creator" content="@waritocomatta">
   <meta property="og:url" content="https://nhs-with-line.glitch.me">
   <meta property="og:title" content="nhs-with-line">
   <meta property="og:description" content="This is web system and LINE bot for record the relationship of KADOKAWA DWANGO N HIGH SCHOOL members account and LINE account.">
@@ -110,7 +110,8 @@
   </div>
   <script>
     liff.init(function (data) {if (!data.context.roomId && !data.context.groupId) $('.login-area').removeClass('hide');});
-    $(document).ready(function(){ $('.carousel').carousel(); });
-    if (location.search === '?msg=mustUseOrganization') Materialize.toast('must use applicable organization account.', 5000);
+    if (location.search === '?msg=mustUseOrganization') {
+      Materialize.toast('must use applicable organization account.', 5000);
+    }
   </script>
 </body>

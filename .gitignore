@@ -93,6 +93,5 @@ typings/
 
 dist
 
-index.js
 db/main.sqlite3
 nhs-with-line

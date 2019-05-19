@@ -13,28 +13,25 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-preset-es2015": "^6.24.1",
     "eslint-plugin-flowtype": "^3.2.1",
     "flow-bin": "^0.91.0",
-    "flow-typed": "^2.5.1",
-    "nexe": "^2.0.0-rc.34"
+    "flow-typed": "^2.5.1"
   },
   "name": "nhs-with-line",
   "version": "1.0.0",
   "description": "nhs-with-line",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "flow": "flow check",
+    "flow": "flow check ./src",
     "type": "flow-typed install",
-    "babel": "babel dev.js -o index.js",
-    "watch": "babel dev.js -o index.js --watch",
-    "compact": "babel dev.js -o index.js --compact=true",
-    "nexe": "nexe index.js"
+    "babel": "babel ./src -d ./dist",
+    "watch": "babel ./src -d ./dist --watch",
+    "compact": "babel ./src -d ./dist --compact=true"
   },
   "repository": {
     "type": "git",
@@ -43,9 +40,12 @@
   "keywords": [
     "express",
     "google",
-    "line"
+    "line",
+    "sequelize",
+    "sqlite3",
+    "flow"
   ],
-  "author": "Motone Adachi",
+  "author": "Motone Adachi ( waricoma )",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/waricoma/nhs-with-line/issues"
